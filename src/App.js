@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import Header from "./Header";
 import PeopleColumn from "./PeopleColumn1";
 import EventsColumn from "./EventsColumn2";
@@ -11,7 +10,10 @@ function App() {
     <div>
       <Header>BUZZ BOARD</Header>
       <ColumnWrapper>
-        <PeopleColumn>Das ist ein Platzhalter</PeopleColumn>
+        <PeopleColumn>
+          {/* <h2>{name}</h2>
+          <p>{birthday}</p> */}
+        </PeopleColumn>
         <EventsColumn>Das ist ein Platzhalter</EventsColumn>
         <LunchColumn>Das ist ein Platzhalter</LunchColumn>
       </ColumnWrapper>
