@@ -17,9 +17,9 @@ export default function PeopleColumn() {
 }
 
 const StyledPeopleColumn = styled.div`
-  display: inline
+  display: inline-block;
   background: #35682d;
-  font-family: 'josefin';
+  font-family: "josefin";
   color: white;
   margin: 10px;
   padding: 10px;
