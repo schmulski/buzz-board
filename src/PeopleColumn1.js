@@ -5,10 +5,11 @@ import birthdayData from "./birthdays.json";
 export default function PeopleColumn() {
   return (
     <StyledPeopleColumn>
-      <h2>BirthdayBoard</h2>
-      {birthdayData.map((birthday, index) => (
+      <h2>Birthday Board BB 🎈</h2>
+      {birthdayData.map(birthday => (
         <div>
-          <p>Name={birthday.name}</p> Birthday={birthday.birthday},
+          <BirthdayList>{birthday.name}</BirthdayList> Date:{birthday.birthday}
+          <p>{birthday.funfact}</p>
         </div>
       ))}
     </StyledPeopleColumn>
@@ -16,13 +17,14 @@ export default function PeopleColumn() {
 }
 
 const StyledPeopleColumn = styled.div`
-  width: auto;
+  display: inline
   background: #35682d;
-  font-family: "Fredericka the Great";
-  color: hotpink;
-  height: auto;
+  font-family: 'josefin';
+  color: white;
   margin: 10px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  overflow: auto;
+  padding: 10px;
+`;
+
+const BirthdayList = styled.p`
+  margin: 0px;
 `;

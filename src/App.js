@@ -5,10 +5,12 @@ import EventsColumn from "./EventsColumn2";
 import LunchColumn from "./LunchColumn3";
 import styled from "styled-components";
 import Clock from "react-live-clock";
+import GlobalStyles from "./GlobalStyles";
 
 function App() {
   return (
     <div>
+      <GlobalStyles />
       <Header>
         <h1>BUZZ BOARD</h1>
         <ClockStyle>

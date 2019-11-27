@@ -1,19 +1,23 @@
 [
   {
     "name": "Anni",
-    "birthday": "31.12.1985"
+    "birthday": "31.12.1985",
+    "funfact": "It's new years eve!"
   },
   {
     "name": "Anja",
-    "birthday": "16.04.1988"
+    "birthday": "16.04.1988",
+    "funfact": "259 days left for this year!"
   },
   {
     "name": "Britta",
-    "birthday": "02.10.1989"
+    "birthday": "02.10.1989",
+    "funfact": "2001.10.02 Swissair is bankrupt"
   },
   {
     "name": "Davut",
-    "birthday": "12.10.1989"
+    "birthday": "12.10.1989",
+    "funfact": "1979: With 'Die drei ??? und der Super-Papagei' the first radio play by Die drei ??? is released under the label Europa."
   },
   {
     "name": "Ivana",
