@@ -36,6 +36,6 @@ const ColumnWrapper = styled.section`
 const ClockStyle = styled.div`
   color: gold;
   display: grid;
-  place-self: center;
-  height: -30px;
+  justify-self: end;
+  align-self: center;
 `;
