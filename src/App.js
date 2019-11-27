@@ -10,10 +10,10 @@ function App() {
   return (
     <div>
       <Header>
-        BUZZ BOARD
-        <p>
+        <h1>BUZZ BOARD</h1>
+        <ClockStyle>
           <Clock format={"HH:mm:ss"} ticking={true} timezone={"European"} />
-        </p>
+        </ClockStyle>
       </Header>
       <ColumnWrapper>
         <PeopleColumn />
@@ -29,4 +29,11 @@ const ColumnWrapper = styled.section`
   display: flex;
   flex-dircetion: row;
   justify-content: space-around;
+`;
+
+const ClockStyle = styled.div`
+  color: gold;
+  display: grid;
+  place-self: center;
+  height: -30px;
 `;
