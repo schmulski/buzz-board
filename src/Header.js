@@ -8,6 +8,7 @@ const Header = styled.h1`
   font-size: h1;
   vertical-align: middle;
   text-align: center;
+  position: relative;
 `;
 
 export default Header;

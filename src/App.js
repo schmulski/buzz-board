@@ -4,16 +4,19 @@ import PeopleColumn from "./PeopleColumn1";
 import EventsColumn from "./EventsColumn2";
 import LunchColumn from "./LunchColumn3";
 import styled from "styled-components";
+import Clock from "react-live-clock";
 
 function App() {
   return (
     <div>
-      <Header>BUZZ BOARD</Header>
+      <Header>
+        BUZZ BOARD
+        <p>
+          <Clock format={"HH:mm:ss"} ticking={true} timezone={"European"} />
+        </p>
+      </Header>
       <ColumnWrapper>
-        <PeopleColumn>
-          {/* <h2>{name}</h2>
-          <p>{birthday}</p> */}
-        </PeopleColumn>
+        <PeopleColumn />
         <EventsColumn>Das ist ein Platzhalter</EventsColumn>
         <LunchColumn>Das ist ein Platzhalter</LunchColumn>
       </ColumnWrapper>
