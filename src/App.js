@@ -20,7 +20,7 @@ function App() {
       <ColumnWrapper>
         <PeopleColumn />
         <EventsColumn>Das ist ein Platzhalter</EventsColumn>
-        <LunchColumn>Das ist ein Platzhalter</LunchColumn>
+        <LunchColumn></LunchColumn>
       </ColumnWrapper>
     </div>
   );
@@ -34,7 +34,7 @@ const ColumnWrapper = styled.section`
 `;
 
 const ClockStyle = styled.div`
-  color: gold;
+  color: #ffaaa5;
   display: grid;
   justify-self: end;
   align-self: center;

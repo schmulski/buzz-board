@@ -4,7 +4,7 @@ const Header = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-self: center;
-  background: #35682d;
+  background: #a8e6cf;
   min-height: 75px;
   margin: 10px;
   font-family: "Fredericka the Great";
