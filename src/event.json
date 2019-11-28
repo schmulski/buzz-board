@@ -1,0 +1,44 @@
+[
+  {
+    "day": "Tuesday",
+    "occurrence": "weekly",
+    "time": "09-10",
+    "title": "Teambreakfast"
+  },
+  {
+    "day": "Monday",
+    "occurrence": "weekly",
+    "time": "17-18",
+    "title": "Teach & Talk"
+  },
+  {
+    "day": "Wednesday",
+    "occurrence": "weekly",
+    "time": "12-13",
+    "title": "Teamlunch"
+  },
+  {
+    "day": "Thursday",
+    "occurrence": "weekly",
+    "time": "10:30-11",
+    "title": "Big Standup"
+  },
+  {
+    "day": "Friday",
+    "occurrence": "weekly",
+    "time": "start 17",
+    "title": "After work beer"
+  },
+  {
+    "day": "Friday",
+    "occurrence": "bi-weekly",
+    "time": "16-17",
+    "title": "All hands"
+  },
+  {
+    "day": "Friday",
+    "occurrence": "bi-weekly",
+    "time": "15-16",
+    "title": "Review"
+  }
+]
