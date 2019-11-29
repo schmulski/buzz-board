@@ -1,44 +1,44 @@
 [
   {
-    "day": "Tuesday",
-    "occurrence": "weekly",
-    "time": "09-10",
+    "startDate": "2019-11-26 09:00",
+    "recurrenceInDays": 7,
+    "durationInHours": 1,
     "title": "Teambreakfast"
   },
   {
-    "day": "Monday",
-    "occurrence": "weekly",
-    "time": "17-18",
+    "startDate": "2019-11-25 17:00",
+    "recurrenceInDays": 7,
+    "durationInHours": 1,
     "title": "Teach & Talk"
   },
   {
-    "day": "Wednesday",
-    "occurrence": "weekly",
-    "time": "12-13",
+    "startDate": "2019-11-27 12:00",
+    "recurrenceInDays": 7,
+    "durationInHours": 1,
     "title": "Teamlunch"
   },
   {
-    "day": "Thursday",
-    "occurrence": "weekly",
-    "time": "10:30-11",
+    "startDate": "2019-11-28 10:30",
+    "recurrenceInDays": 7,
+    "durationInHours": 0.5,
     "title": "Big Standup"
   },
   {
-    "day": "Friday",
-    "occurrence": "weekly",
-    "time": "start 17",
+    "startDate": "2019-11-22 17:00",
+    "recurrenceInDays": 7,
+    "durationInHours": 3,
     "title": "After work beer"
   },
   {
-    "day": "Friday",
-    "occurrence": "bi-weekly",
-    "time": "16-17",
+    "startDate": "2019-11-22 16:00",
+    "recurrenceInDays": 14,
+    "durationInHours": 1,
     "title": "All hands"
   },
   {
-    "day": "Friday",
-    "occurrence": "bi-weekly",
-    "time": "15-16",
+    "startDate": "2019-11-22 15:00",
+    "recurrenceInDays": 14,
+    "durationInHours": 1,
     "title": "Review"
   }
 ]

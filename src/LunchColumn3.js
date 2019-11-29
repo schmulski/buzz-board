@@ -1,10 +1,27 @@
+import React from "react";
 import styled from "styled-components";
 
-const LunchColumn = styled.div`
+export default function LunchColumn() {
+  return (
+    <StyledLunchColumn>
+      <h2>Lunch recommendation</h2>
+      <ImageLunch
+        src={require(`./images/lunchmenu.jpg`)}
+        alt="This week for lunch"
+      ></ImageLunch>
+    </StyledLunchColumn>
+  );
+}
+
+const StyledLunchColumn = styled.div`
   width: 30%;
-  background: #35682d;
-  height: 100vh;
+  background: #a8e6cf;
   margin: 10px;
+  margin 5px;
+  font-family: "Fredericka the Great";
 `;
 
-export default LunchColumn;
+const ImageLunch = styled.img`
+  width: 100%;
+  margin: 5px;
+`;

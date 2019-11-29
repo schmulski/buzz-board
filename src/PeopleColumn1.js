@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 import birthdayData from "./birthdays.json";
+import EventCard from "./EventCard.js";
 
 export default function PeopleColumn() {
   return (
     <StyledPeopleColumn>
       <h2>Birthday Board BB 🎈</h2>
       {birthdayData.map(birthday => (
-        <div>
+        <EventCard>
           <BirthdayList>{birthday.name}</BirthdayList> Date:{birthday.birthday}
           <p>{birthday.funfact}</p>
-        </div>
+        </EventCard>
       ))}
     </StyledPeopleColumn>
   );
@@ -18,10 +19,11 @@ export default function PeopleColumn() {
 
 const StyledPeopleColumn = styled.div`
   display: inline-block;
-  background: #35682d;
+  max-width: 30%;
+  background: #a8e6cf;
   font-family: "josefin";
   color: white;
-  margin: 10px;
+  margin: 5px;
   padding: 10px;
 `;
 
