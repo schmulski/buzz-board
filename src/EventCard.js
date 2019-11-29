@@ -5,7 +5,7 @@ const EventCard = styled.section`
   position: relative;
   padding: 10px;
   margin: 5px;
-  background: #ffd3b6;
+  background: #fcc169;
   color: #333;
   border-radius: 6px;
   box-shadow: 0 10px 10px #0002;
