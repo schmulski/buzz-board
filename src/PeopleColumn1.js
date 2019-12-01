@@ -11,7 +11,7 @@ const BirthdayList = styled.p`
 
 export default function PeopleColumn() {
   return (
-    <StyledColumn>
+    <StyledColumn gridArea="people">
       <h2 className="title"> Buzzz Birthday Board 🎈</h2>
       {birthdayData.map(birthday => (
         <EventCard>

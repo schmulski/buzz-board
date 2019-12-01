@@ -6,6 +6,7 @@ import LunchColumn from "./LunchColumn3";
 import styled from "styled-components/macro";
 import Clock from "react-live-clock";
 import GlobalStyles from "./GlobalStyles";
+import ColumnWrapper from "./ColumnWrapper";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
       </Header>
       <ColumnWrapper>
         <PeopleColumn />
-        <EventsColumn>Das ist ein Platzhalter</EventsColumn>
+        <EventsColumn />
         <LunchColumn></LunchColumn>
       </ColumnWrapper>
     </div>
@@ -27,16 +28,15 @@ function App() {
 }
 export default App;
 
-const ColumnWrapper = styled.section`
-  display: flex;
-  flex-dircetion: row;
-  justify-content: space-around;
-`;
-
 const ClockStyle = styled.div`
+  grid-area: clock;
   color: #e13a9d;
   font-size: 50px;
   display: grid;
   justify-self: end;
   align-self: center;
+
+  @media (max-width: 600px) {
+    justify-self: center;
+  }
 `;

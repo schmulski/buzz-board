@@ -16,7 +16,7 @@ import {
 
 export default function LunchColumn() {
   return (
-    <StyledColumn>
+    <StyledColumn gridArea="lunch">
       <h2 className="title">Lunch recommendation</h2>
       <ImageLunch
         src={require(`./images/lunchmenu.jpg`)}
@@ -25,7 +25,7 @@ export default function LunchColumn() {
       <TwitterTimelineEmbed
         sourceType="profile"
         screenName="HVVStoerungen"
-        options={{ height: 400 }}
+        options={{ height: 600 }}
       />
     </StyledColumn>
   );

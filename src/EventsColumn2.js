@@ -70,7 +70,7 @@ let augmentedEventData = eventData
 
 export default function EventsColumn() {
   return (
-    <StyledColumn>
+    <StyledColumn gridArea="events">
       <h2 className="title">WhatsUp today and this week? 🔮 </h2>
       {augmentedEventData.map(event => (
         <EventCard>

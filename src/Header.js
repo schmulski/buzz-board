@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 const Header = styled.section`
   display: grid;
+  grid-template-areas: "title clock";
+
   grid-template-columns: 45% 45%;
   align-text: center;
   background: #2c7873;
@@ -22,7 +24,20 @@ const Header = styled.section`
     }
   }
 
+  @media (max-width: 600px) {
+    grid-template-areas:
+      "title"
+      "clock";
+    grid-template-columns: 100%;
+
+    .title {
+      text-align: center;
+      padding: 0;
+    }
+  }
+
   .title {
+    grid-area: title;
     align-text: center;
     font-size: 50px;
     color: #e13a9d;
