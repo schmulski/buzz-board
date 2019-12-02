@@ -1,9 +1,10 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import eventData from "./event.json";
 import EventCard from "./EventCard";
 import * as moment from "moment";
 import "moment-recur";
+import StyledColumn from "./StyledColumn";
 
 let lastMonday = new Date();
 // Ist lastMonday NICHT Montag?
@@ -69,8 +70,8 @@ let augmentedEventData = eventData
 
 export default function EventsColumn() {
   return (
-    <StyledEventColumn>
-      <StyledH2>WhatsUp today and this week? 🔮 </StyledH2>
+    <StyledColumn gridArea="events">
+      <h2 className="title">WhatsUp today and this week? 🔮 </h2>
       {augmentedEventData.map(event => (
         <EventCard>
           <EventList>{event.title}</EventList>
@@ -78,22 +79,12 @@ export default function EventsColumn() {
           <p></p>
         </EventCard>
       ))}
-    </StyledEventColumn>
+    </StyledColumn>
   );
 }
 
-const StyledEventColumn = styled.div`
-  display: inline-block;
-  background: #a8e6cf;
-  margin: 10px;
-  color: white;
-  font-family: "Fredericka the Great";
-`;
-
 const EventList = styled.p`
   margin: 0px;
-`;
-
-const StyledH2 = styled.h2`
-  margin: 5px;
+  font-size: 30px;
+  color: black;
 `;

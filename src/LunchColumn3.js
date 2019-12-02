@@ -1,27 +1,36 @@
 import React from "react";
 import styled from "styled-components";
+import StyledColumn from "./StyledColumn";
+import {
+  TwitterTimelineEmbed,
+  TwitterShareButton,
+  TwitterFollowButton,
+  TwitterHashtagButton,
+  TwitterMentionButton,
+  TwitterTweetEmbed,
+  TwitterMomentShare,
+  TwitterDMButton,
+  TwitterVideoEmbed,
+  TwitterOnAirButton
+} from "react-twitter-embed";
 
 export default function LunchColumn() {
   return (
-    <StyledLunchColumn>
-      <h2>Lunch recommendation</h2>
+    <StyledColumn gridArea="lunch">
+      <h2 className="title">Lunch recommendation</h2>
       <ImageLunch
         src={require(`./images/lunchmenu.jpg`)}
         alt="This week for lunch"
       ></ImageLunch>
-    </StyledLunchColumn>
+      <TwitterTimelineEmbed
+        sourceType="profile"
+        screenName="HVVStoerungen"
+        options={{ height: 600 }}
+      />
+    </StyledColumn>
   );
 }
 
-const StyledLunchColumn = styled.div`
-  width: 30%;
-  background: #a8e6cf;
-  margin: 10px;
-  margin 5px;
-  font-family: "Fredericka the Great";
-`;
-
 const ImageLunch = styled.img`
   width: 100%;
-  margin: 5px;
 `;
