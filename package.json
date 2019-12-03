@@ -26,7 +26,8 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "plugins": ["cypress"]
   },
   "browserslist": {
     "production": [
@@ -45,6 +46,7 @@
     "@storybook/addon-links": "^5.2.6",
     "@storybook/addons": "^5.2.6",
     "@storybook/react": "^5.2.6",
-    "cypress": "^3.7.0"
+    "cypress": "^3.7.0",
+    "eslint-plugin-cypress": "^2.7.0"
   }
 }
