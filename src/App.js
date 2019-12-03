@@ -1,12 +1,15 @@
-import React from "react";
-import Header from "./Header";
-import PeopleColumn from "./PeopleColumn1";
-import EventsColumn from "./EventsColumn2";
-import LunchColumn from "./LunchColumn3";
-import styled from "styled-components/macro";
-import Clock from "react-live-clock";
-import GlobalStyles from "./GlobalStyles";
-import ColumnWrapper from "./ColumnWrapper";
+import React from 'react'
+import Header from './Header'
+import PeopleColumn from './PeopleColumn1'
+import EventsColumn from './EventsColumn3'
+import LunchColumn from './LunchColumn3'
+import styled from 'styled-components/macro'
+import Clock from 'react-live-clock'
+import GlobalStyles from './GlobalStyles'
+import ColumnWrapper from './ColumnWrapper'
+import { getEvents, postEvents, deleteEvents, patchEvents } from './services'
+
+console.log()
 
 function App() {
   return (
@@ -15,7 +18,7 @@ function App() {
       <Header>
         <h1 className="title"> BUZZ BOARD</h1>
         <ClockStyle>
-          <Clock format={"HH:mm:ss"} ticking={true} timezone={"European"} />
+          <Clock format={'HH:mm:ss'} ticking={true} timezone={'European'} />
         </ClockStyle>
       </Header>
       <ColumnWrapper>
@@ -24,9 +27,9 @@ function App() {
         <LunchColumn></LunchColumn>
       </ColumnWrapper>
     </div>
-  );
+  )
 }
-export default App;
+export default App
 
 const ClockStyle = styled.div`
   grid-area: clock;
@@ -39,4 +42,4 @@ const ClockStyle = styled.div`
   @media (max-width: 600px) {
     justify-self: center;
   }
-`;
+`

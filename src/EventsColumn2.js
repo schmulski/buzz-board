@@ -1,90 +1,91 @@
-import React from "react";
-import styled from "styled-components/macro";
-import eventData from "./event.json";
-import EventCard from "./EventCard";
-import * as moment from "moment";
-import "moment-recur";
-import StyledColumn from "./StyledColumn";
+import React from 'react'
 
-let lastMonday = new Date();
+import styled from 'styled-components/macro'
+import eventData from './event.json'
+import YellowCard from './YellowCard'
+import * as moment from 'moment'
+import 'moment-recur'
+import StyledColumn from './StyledColumn'
+
+let lastMonday = new Date()
 // Ist lastMonday NICHT Montag?
 if (lastMonday.getDay() != 1) {
-  let diffToMonday = lastMonday.getDay() - 1;
+  let diffToMonday = lastMonday.getDay() - 1
   // An einem Sonntag ist getDay === 0 und daher waere diffToMonday === -1
   // Um dies zu verhindern addieren wir eine Woche (7 Tage) dazu
   // und rechnen dann modulo 7 um nur Werte zwischen 0 und 6 zu erhalten
-  diffToMonday = (diffToMonday + 7) % 7;
+  diffToMonday = (diffToMonday + 7) % 7
 
   // lastMonday auf letzten Montag setzen
-  lastMonday.setDate(lastMonday.getDate() - diffToMonday);
+  lastMonday.setDate(lastMonday.getDate() - diffToMonday)
 }
 // Auf Mitternacht setzen
-lastMonday.setHours(0, 0, 0, 0);
+lastMonday.setHours(0, 0, 0, 0)
 
 // endDate wird aus dem gleichen Zeitpunkt wie lastMonday initialisiert
-let endDate = new Date(lastMonday.getTime());
+let endDate = new Date(lastMonday.getTime())
 // Dann werden 5 Tage hinzugerechnet um Mitternacht am nächsten Samstag zu erreichen
-endDate.setDate(endDate.getDate() + 5);
+endDate.setDate(endDate.getDate() + 5)
 
 // startDate ist heute
-let startDate = new Date();
+let startDate = new Date()
 // um Mitternacht
-startDate.setHours(0, 0, 0, 0);
+startDate.setHours(0, 0, 0, 0)
 
 // NUR ZUM TESTEN!
-startDate = new Date(2019, 11, 1, 0, 0, 0, 0);
-endDate = new Date(2019, 11, 7, 0, 0, 0, 0);
+startDate = new Date(2019, 11, 1, 0, 0, 0, 0)
+endDate = new Date(2019, 11, 7, 0, 0, 0, 0)
 
 let augmentedEventData = eventData
   .map(event => {
     // Startdatum aus den Event Daten auslesen
-    let eventStartDate = moment(event.startDate);
+    let eventStartDate = moment(event.startDate)
     // Wiederkehrende Termine mit moment-recur aus Basis des Startdatums aus dem Event einrichten
     let recurrence = moment(event.startDate)
       .recur()
       .every(event.recurrenceInDays)
-      .days();
+      .days()
     // Nur wiederkeherende Termine nach dem startDate betrachten
-    recurrence.fromDate(startDate);
+    recurrence.fromDate(startDate)
 
     // Nächsten wiederkehrenden Termin suchen (L heisst lokale Zeit)
-    let nextOccurence = moment(recurrence.next(1, "L")[0]);
+    let nextOccurence = moment(recurrence.next(1, 'L')[0])
 
     // nextOccurence auf null setzen wenn es erst nach dem endDate ist
     if (nextOccurence > endDate) {
-      nextOccurence = null;
+      nextOccurence = null
     } else {
       // Falls dies vor dem endDate ist, die Uhrzeit aus dem Startdatum des Events nehmen
       // Da moment-recur nur Tage zurückgibt und die Uhrzeit aussen vor lässt
-      nextOccurence.hour(eventStartDate.hour());
-      nextOccurence.minute(eventStartDate.minute());
+      nextOccurence.hour(eventStartDate.hour())
+      nextOccurence.minute(eventStartDate.minute())
     }
 
     return {
       ...event,
-      nextOccurence: nextOccurence
-    };
+      nextOccurence: nextOccurence,
+    }
   })
   .filter(event => event.nextOccurence)
-  .sort((a, b) => (a.nextOccurence > b.nextOccurence ? 1 : -1));
+  .sort((a, b) => (a.nextOccurence > b.nextOccurence ? 1 : -1))
 
 export default function EventsColumn() {
   return (
     <StyledColumn gridArea="events">
       <h2 className="title">WhatsUp today and this week? 🔮 </h2>
       {augmentedEventData.map(event => (
-        <EventCard>
+        <YellowCard>
           <EventList>{event.title}</EventList>
-          {event.nextOccurence.format("dddd HH:mm")}
+          {event.nextOccurence.format('dddd HH:mm')}
           <p></p>
-        </EventCard>
+        </YellowCard>
       ))}
     </StyledColumn>
-  );
+  )
 }
 
 const EventList = styled.p`
   margin: 0px;
   font-size: 30px;
   color: black;
-`;
+`
