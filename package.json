@@ -30,7 +30,9 @@
   },
   "eslintConfig": {
     "extends": "react-app",
-    "plugins": ["cypress"]
+    "plugins": [
+      "cypress"
+    ]
   },
   "browserslist": {
     "production": [
