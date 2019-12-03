@@ -35,7 +35,8 @@ startDate.setHours(0, 0, 0, 0)
 startDate = new Date(2019, 11, 1, 0, 0, 0, 0)
 endDate = new Date(2019, 11, 7, 0, 0, 0, 0)
 
-export default function EventCard({ event }) {
+export default function EventCard(props) {
+  let event = props.event;
   // Startdatum aus den Event Daten auslesen
   let eventStartDate = moment(event.startDate)
   // Wiederkehrende Termine mit moment-recur aus Basis des Startdatums aus dem Event einrichten
@@ -58,6 +59,8 @@ export default function EventCard({ event }) {
     nextOccurence.hour(eventStartDate.hour())
     nextOccurence.minute(eventStartDate.minute())
   }
+  props.nextOccurence = nextOccurence;
+
   if (!nextOccurence) {
     return
   }
