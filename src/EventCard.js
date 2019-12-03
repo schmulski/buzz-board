@@ -59,7 +59,7 @@ export default function EventCard(props) {
     nextOccurence.hour(eventStartDate.hour())
     nextOccurence.minute(eventStartDate.minute())
   }
-  props.nextOccurence = nextOccurence;
+  //props.nextOccurence = nextOccurence;
 
   if (!nextOccurence) {
     return

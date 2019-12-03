@@ -1,8 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import birthdayData from './birthdays.json'
 import YellowCard from './YellowCard.js'
 import StyledColumn from './StyledColumn'
+
+import firebase from 'firebase/app'
+import 'firebase/database'
+import {
+  FirebaseDatabaseProvider,
+  FirebaseDatabaseNode,
+} from '@react-firebase/database'
+
+import FirebaseConfig from './FirebaseConfig'
 
 const BirthdayList = styled.p`
   margin: 0px;
@@ -16,12 +24,17 @@ export default function PeopleColumn() {
         {' '}
         Buzzz Birthday Board <span></span>
       </h2>
-      {birthdayData.map(birthday => (
+      <FirebaseDatabaseProvider firebase={firebase} {...FirebaseConfig}>
+        <FirebaseDatabaseNode path="birthdays/">
+        {d=> {
+          return (d.value || []).map(birthday => (
         <YellowCard>
           <BirthdayList>{birthday.name}</BirthdayList> Date:{birthday.birthday}
           <p>{birthday.funfact}</p>
         </YellowCard>
-      ))}
+      ))}}
+       </FirebaseDatabaseNode>
+      </FirebaseDatabaseProvider>
     </StyledColumn>
   )
 }
