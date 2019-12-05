@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import StyledColumn from "./StyledColumn";
+import React from 'react'
+import styled from 'styled-components/macro'
+import StyledColumn from './StyledColumn'
 import {
   TwitterTimelineEmbed,
   TwitterShareButton,
@@ -11,8 +11,8 @@ import {
   TwitterMomentShare,
   TwitterDMButton,
   TwitterVideoEmbed,
-  TwitterOnAirButton
-} from "react-twitter-embed";
+  TwitterOnAirButton,
+} from 'react-twitter-embed'
 
 export default function LunchColumn() {
   return (
@@ -28,9 +28,9 @@ export default function LunchColumn() {
         options={{ height: 600 }}
       />
     </StyledColumn>
-  );
+  )
 }
 
 const ImageLunch = styled.img`
   width: 100%;
-`;
+`
