@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import YellowCard from './YellowCard.js'
 import StyledColumn from './StyledColumn'
 
@@ -26,14 +26,16 @@ export default function PeopleColumn() {
       </h2>
       <FirebaseDatabaseProvider firebase={firebase} {...FirebaseConfig}>
         <FirebaseDatabaseNode path="birthdays/">
-        {d=> {
-          return (d.value || []).map(birthday => (
-        <YellowCard>
-          <BirthdayList>{birthday.name}</BirthdayList> Date:{birthday.birthday}
-          <p>{birthday.funfact}</p>
-        </YellowCard>
-      ))}}
-       </FirebaseDatabaseNode>
+          {d => {
+            return (d.value || []).map(birthday => (
+              <YellowCard>
+                <BirthdayList>{birthday.name}</BirthdayList> Date:
+                {birthday.birthday}
+                <p>{birthday.funfact}</p>
+              </YellowCard>
+            ))
+          }}
+        </FirebaseDatabaseNode>
       </FirebaseDatabaseProvider>
     </StyledColumn>
   )

@@ -1,15 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components/macro'
 
 const Header = styled.section`
   display: grid;
-  grid-template-areas: "title clock";
+  grid-template-areas: 'title clock';
 
   grid-template-columns: 45% 45%;
   align-text: center;
   background: #2c7873;
   min-height: 60px;
   margin: 10px;
-  font-family: "Fredericka the Great";
+  font-family: 'Fredericka the Great';
   font-size: 30px;
   color: #ffffff;
   animation-duration: 3s;
@@ -26,8 +26,8 @@ const Header = styled.section`
 
   @media (max-width: 600px) {
     grid-template-areas:
-      "title"
-      "clock";
+      'title'
+      'clock';
     grid-template-columns: 100%;
 
     .title {
@@ -43,6 +43,6 @@ const Header = styled.section`
     color: #e13a9d;
     padding-left: 30px;
   }
-`;
+`
 
-export default Header;
+export default Header

@@ -11,7 +11,7 @@ const ColumnWrapper = styled.section`
       'events'
       'people'
       'lunch';
-    çgrid-template-columns: 100%;
+    grid-template-columns: 100%;
   }
 `
 
