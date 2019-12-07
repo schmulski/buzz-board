@@ -6,7 +6,7 @@ const FooterStyling = styled.section`
 
   grid-template-columns: 45% 45%;
   align-text: center;
-  background: #2c7873;
+  background: #ffffff;
   min-height: 60px;
   margin: 10px;
   font-family: 'Fredericka the Great';

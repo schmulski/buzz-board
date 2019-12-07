@@ -1,17 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
 import * as moment from 'moment'
+import slack from './images/slack.png'
 
 export default function NewsEntry({ user, message, timestamp }) {
   return (
     <ul>
-      <li>
-        <User> {user} </User>:<Message>{message}</Message>
+      <ListStyle>
+        <User> {user} </User>
+        <Message>{message}</Message>
         <Timestamp> {moment(timestamp).format('LLLL')}</Timestamp>
-      </li>
+        <p></p>
+      </ListStyle>
     </ul>
   )
 }
+
+const ListStyle = styled.li`
+  list-style-image: url(${slack});
+  margin: 20px;
+`
 
 const User = styled.p`
   color: red;
