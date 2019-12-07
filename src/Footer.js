@@ -1,5 +1,5 @@
-import styled from 'styled-components'
 import React from 'react'
+import NewsEntry from './NewsEntry'
 
 import firebase from 'firebase/app'
 import 'firebase/database'
@@ -9,54 +9,26 @@ import {
 } from '@react-firebase/database'
 
 import FirebaseConfig from './FirebaseConfig'
+import FooterStyling from './FooterStyling'
 
 export default function Footer() {
   return (
-    <FirebaseDatabaseProvider firebase={firebase} {...FirebaseConfig}>
-      <FirebaseDatabaseNode path="news/">
-        {data => {
-          return Object.keys(data.value || {}).map(id => (
-            <NewsEntry
-              user={data.value[id].user}
-              message={data.value[id].message}
-            />
-          ))
-        }}
-      </FirebaseDatabaseNode>
-    </FirebaseDatabaseProvider>
+    <FooterStyling>
+      <FirebaseDatabaseProvider firebase={firebase} {...FirebaseConfig}>
+        <FirebaseDatabaseNode path="news/" orderByChild="timestamp">
+          {data => {
+            return Object.keys(data.value || {})
+              .map(id => (
+                <NewsEntry
+                  user={data.value[id].user}
+                  message={data.value[id].message}
+                  timestamp={data.value[id].timestamp}
+                />
+              ))
+              .reverse()
+          }}
+        </FirebaseDatabaseNode>
+      </FirebaseDatabaseProvider>
+    </FooterStyling>
   )
 }
-
-const NewsEntry = styled.section`
-  display: grid;
-  grid-template-areas: 'news picture';
-
-  grid-template-columns: 45% 45%;
-  align-text: center;
-  background: #2c7873;
-  min-height: 60px;
-  margin: 10px;
-  font-family: 'Fredericka the Great';
-  font-size: 30px;
-  color: #ffffff;
-
-  @media (max-width: 600px) {
-    grid-template-areas:
-      'news'
-      'picture';
-    grid-template-columns: 100%;
-
-    .news {
-      text-align: center;
-      padding: 0;
-    }
-  }
-
-  .news {
-    grid-area: news;
-    align-text: center;
-    font-size: 50px;
-    color: #e13a9d;
-    padding-left: 30px;
-  }
-`
