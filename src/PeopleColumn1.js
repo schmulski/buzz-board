@@ -26,8 +26,8 @@ export default function PeopleColumn() {
       </h2>
       <FirebaseDatabaseProvider firebase={firebase} {...FirebaseConfig}>
         <FirebaseDatabaseNode path="birthdays/">
-          {d => {
-            return (d.value || []).map(birthday => (
+          {data => {
+            return (data.value || []).map(birthday => (
               <YellowCard>
                 <BirthdayList>{birthday.name}</BirthdayList> Date:
                 {birthday.birthday}

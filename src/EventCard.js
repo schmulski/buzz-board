@@ -7,7 +7,7 @@ export default function EventCard({ event }) {
   const buttonText = isHidden ? 'Show details' : 'Hide details'
   const onButtonClick = () => setIsHidden(!isHidden)
   if (!event.nextOccurence) {
-    return
+    return 'nothing found'
   }
   return (
     <YellowCard>
