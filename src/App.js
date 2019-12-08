@@ -7,9 +7,7 @@ import styled from 'styled-components/macro'
 import Clock from 'react-live-clock'
 import GlobalStyles from './GlobalStyles'
 import ColumnWrapper from './ColumnWrapper'
-import { getEvents, postEvents, deleteEvents, patchEvents } from './services'
-
-console.log()
+import Footer from './Footer'
 
 function App() {
   return (
@@ -26,6 +24,7 @@ function App() {
         <EventsColumn />
         <LunchColumn></LunchColumn>
       </ColumnWrapper>
+      <Footer />
     </div>
   )
 }

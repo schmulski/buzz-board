@@ -24,10 +24,10 @@ export default function EventsColumn() {
       </h2>
       <FirebaseDatabaseProvider firebase={firebase} {...FirebaseConfig}>
         <FirebaseDatabaseNode path="events/">
-          {d => {
+          {data => {
             return (
               <Sort>
-                {(d.value || []).map(event => (
+                {(data.value || []).map(event => (
                   <EventCard event={eventWithNextOccurence(event)}></EventCard>
                 ))}
               </Sort>

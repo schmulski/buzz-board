@@ -1,18 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import StyledColumn from './StyledColumn'
-import {
-  TwitterTimelineEmbed,
-  TwitterShareButton,
-  TwitterFollowButton,
-  TwitterHashtagButton,
-  TwitterMentionButton,
-  TwitterTweetEmbed,
-  TwitterMomentShare,
-  TwitterDMButton,
-  TwitterVideoEmbed,
-  TwitterOnAirButton,
-} from 'react-twitter-embed'
+import { TwitterTimelineEmbed } from 'react-twitter-embed'
 
 export default function LunchColumn() {
   return (
