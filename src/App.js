@@ -8,8 +8,11 @@ import Clock from 'react-live-clock'
 import GlobalStyles from './GlobalStyles'
 import ColumnWrapper from './ColumnWrapper'
 import Footer from './Footer'
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import NewsEntry from './NewsEntry'
+import Navigation from './Navigation'
 
-function App() {
+export default function App() {
   return (
     <div>
       <GlobalStyles />
@@ -20,15 +23,45 @@ function App() {
         </ClockStyle>
       </Header>
       <ColumnWrapper>
-        <PeopleColumn />
-        <EventsColumn />
-        <LunchColumn></LunchColumn>
+        <Router>
+          {/* <div>
+            <nav>
+              <ul>
+                <li>
+                  <Link to="/birthdays">Birthdays</Link>
+                </li>
+                <li>
+                  <Link to="/events">Events</Link>
+                </li>
+                <li>
+                  <Link to="/recommendations">Recommendation</Link>
+                </li>
+                <li>
+                  <Link to="/news">News</Link>
+                </li>
+              </ul>
+            </nav> */}
+          <Switch>
+            <Route path="/events">
+              <EventsColumn />
+            </Route>
+            <Route path="/birthdays">
+              <PeopleColumn />
+            </Route>
+            <Route path="/recommendations">
+              <LunchColumn />
+            </Route>
+            <Route path="/news">
+              <NewsEntry />
+            </Route>
+          </Switch>
+        </Router>
       </ColumnWrapper>
       <Footer />
+      <Navigation />
     </div>
   )
 }
-export default App
 
 const ClockStyle = styled.div`
   grid-area: clock;

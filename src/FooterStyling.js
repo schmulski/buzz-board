@@ -2,9 +2,9 @@ import styled from 'styled-components'
 
 const FooterStyling = styled.section`
   display: grid;
-  grid-template-areas: 'news picture';
+  grid-template-areas: 'news';
 
-  grid-template-columns: 45% 45%;
+  grid-template-columns: 45%;
   align-text: center;
   background: #ffffff;
   min-height: 60px;
@@ -14,9 +14,7 @@ const FooterStyling = styled.section`
   color: #ffffff;
 
   @media (max-width: 600px) {
-    grid-template-areas:
-      'news'
-      'picture';
+    grid-template-areas: 'news';
     grid-template-columns: 100%;
 
     .news {
