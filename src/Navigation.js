@@ -7,7 +7,6 @@ import GoodIcon from './images/good.png'
 import NewsIcon from './images/news.png'
 
 export default function Nav() {
-  //({ links })
   return (
     <Navigation>
       <NavButton>
@@ -49,13 +48,3 @@ const NavButton = styled.button`
   border: none;
   background: none;
 `
-
-//     //<nav>
-//       {links.map(({ path, text }) => (
-//         <Link key={path + text} to={path}>
-//           {text}
-//         </Link>
-//       ))}
-//     </nav>
-//   )
-// }

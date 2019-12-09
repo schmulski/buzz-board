@@ -69,9 +69,3 @@ const ClockStyle = styled.div`
     justify-self: center;
   }
 `
-// @media(max - width: 600px) {
-//   grid - template - areas:
-//   'events'
-//   'people'
-//   'lunch';
-//   grid - template - columns: 100 %;
