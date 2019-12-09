@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import Header from './Header'
 import PeopleColumn from './PeopleColumn1'
 import EventsColumn from './EventsColumn2'
@@ -7,59 +7,53 @@ import styled from 'styled-components/macro'
 import Clock from 'react-live-clock'
 import GlobalStyles from './GlobalStyles'
 import ColumnWrapper from './ColumnWrapper'
-import Footer from './Footer'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
-import NewsEntry from './NewsEntry'
+import NewsTicker from './NewsTicker'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import Media from 'react-media'
 import Navigation from './Navigation'
 
 export default function App() {
   return (
-    <div>
-      <GlobalStyles />
-      <Header>
-        <h1 className="title"> BUZZ BOARD</h1>
-        <ClockStyle>
-          <Clock format={'HH:mm:ss'} ticking={true} timezone={'European'} />
-        </ClockStyle>
-      </Header>
-      <ColumnWrapper>
-        <Router>
-          {/* <div>
-            <nav>
-              <ul>
-                <li>
-                  <Link to="/birthdays">Birthdays</Link>
-                </li>
-                <li>
-                  <Link to="/events">Events</Link>
-                </li>
-                <li>
-                  <Link to="/recommendations">Recommendation</Link>
-                </li>
-                <li>
-                  <Link to="/news">News</Link>
-                </li>
-              </ul>
-            </nav> */}
+    <BrowserRouter>
+      <div>
+        <GlobalStyles />
+        <Header>
+          <h1 className="title"> BUZZ BOARD</h1>
+          <ClockStyle>
+            <Clock format={'HH:mm:ss'} ticking={true} timezone={'European'} />
+          </ClockStyle>
+        </Header>
+        <ColumnWrapper>
           <Switch>
-            <Route path="/events">
-              <EventsColumn />
-            </Route>
-            <Route path="/birthdays">
-              <PeopleColumn />
-            </Route>
-            <Route path="/recommendations">
-              <LunchColumn />
-            </Route>
-            <Route path="/news">
-              <NewsEntry />
-            </Route>
+            <Media queries={{ small: { maxWidth: 599 } }}>
+              {matches =>
+                matches.small ? (
+                  <Fragment>
+                    <Route
+                      name="events"
+                      path="/events"
+                      component={EventsColumn}
+                    />
+                    <Route path="/birthdays" component={PeopleColumn} />
+                    <Route path="/recommendations" component={LunchColumn} />
+                    <Route path="/news" component={NewsTicker} />
+                    <Redirect exact from="/" to="events" />
+                  </Fragment>
+                ) : (
+                  <Fragment>
+                    <PeopleColumn />
+                    <EventsColumn />
+                    <LunchColumn />
+                    <NewsTicker />
+                  </Fragment>
+                )
+              }
+            </Media>
           </Switch>
-        </Router>
-      </ColumnWrapper>
-      <Footer />
-      <Navigation />
-    </div>
+        </ColumnWrapper>
+        <Media query="(max-width: 599px)" render={() => <Navigation />} />
+      </div>
+    </BrowserRouter>
   )
 }
 
@@ -75,3 +69,9 @@ const ClockStyle = styled.div`
     justify-self: center;
   }
 `
+// @media(max - width: 600px) {
+//   grid - template - areas:
+//   'events'
+//   'people'
+//   'lunch';
+//   grid - template - columns: 100 %;

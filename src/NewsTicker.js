@@ -11,7 +11,7 @@ import {
 import FirebaseConfig from './FirebaseConfig'
 import FooterStyling from './FooterStyling'
 
-export default function Footer() {
+export default function NewsTicker() {
   return (
     <FooterStyling>
       <FirebaseDatabaseProvider firebase={firebase} {...FirebaseConfig}>
