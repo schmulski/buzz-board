@@ -1,21 +1,32 @@
-import React, { useState } from 'react'
+import React, { useState, Fragment } from 'react'
 import styled from 'styled-components/macro'
 import YellowCard from './YellowCard'
+import Media from 'react-media'
 
 export default function EventCard({ event }) {
   const [isHidden, setIsHidden] = useState(true)
   const buttonText = isHidden ? 'Show details' : 'Hide details'
   const onButtonClick = () => setIsHidden(!isHidden)
   if (!event.nextOccurence) {
-    return 'nothing found'
+    return null
   }
   return (
     <YellowCard>
       <EventList>{event.title}</EventList>
       {event.nextOccurence.format('dddd HH:mm')}
       <p></p>
-      <Description active={!isHidden}>{event.description}</Description>
-      <Button onClick={onButtonClick}>{buttonText}</Button>
+      <Media queries={{ small: { maxWidth: 599 } }}>
+        {matches =>
+          matches.small ? (
+            <Fragment>
+              <Description active={!isHidden}>{event.description}</Description>
+              <Button onClick={onButtonClick}>{buttonText}</Button>
+            </Fragment>
+          ) : (
+            <Description active={true}>{event.description}</Description>
+          )
+        }
+      </Media>
     </YellowCard>
   )
 }
