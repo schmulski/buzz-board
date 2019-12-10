@@ -8,7 +8,7 @@ export default function Sort({ children }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentShownEvent((currentShownEvent + 1) % childArray.length)
-    }, 1000)
+    }, 10000)
     return () => clearInterval(interval)
   }, [childArray.length, currentShownEvent])
 
