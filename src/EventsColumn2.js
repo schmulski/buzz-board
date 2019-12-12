@@ -13,7 +13,7 @@ import FirebaseConfig from './FirebaseConfig'
 import EventCard from './EventCard'
 
 import Sort from './Sort'
-import SortShuffel from './SortShuffel'
+import SortShuffle from './SortShuffle'
 
 import { eventWithNextOccurence } from './EventHelpers'
 import Media from 'react-media'
@@ -41,13 +41,13 @@ export default function EventsColumn() {
                       </Sort>
                     </>
                   ) : (
-                    <SortShuffel>
+                    <SortShuffle>
                       {(data.value || []).map(event => (
                         <EventCard
                           event={eventWithNextOccurence(event)}
                         ></EventCard>
                       ))}
-                    </SortShuffel>
+                    </SortShuffle>
                   )
                 }
               </Media>

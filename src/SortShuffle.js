@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-export default function SortShuffel({ children }) {
+export default function SortShuffle({ children }) {
   const [currentShownEvent, setCurrentShownEvent] = useState(0)
 
   const childArray = React.Children.toArray(children)
