@@ -25,7 +25,7 @@ export default function PeopleColumn() {
         Buzzz Birthday Board <span></span>
       </h2>
       <FirebaseDatabaseProvider firebase={firebase} {...FirebaseConfig}>
-        <FirebaseDatabaseNode path="birthdays/">
+        <FirebaseDatabaseNode path="birthdays" limitToFirst={4}>
           {data => {
             return (data.value || []).map(birthday => (
               <YellowCard>

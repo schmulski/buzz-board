@@ -21,6 +21,7 @@
     "react-responsive-carousel": "^3.1.51",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.2.0",
+    "react-swipeable-views": "^0.13.3",
     "react-ticker": "^1.2.1",
     "react-twitter-embed": "^3.0.3",
     "styled-components": "^4.4.1"
