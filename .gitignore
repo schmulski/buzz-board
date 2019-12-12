@@ -2,7 +2,6 @@
 /dist 
 .cache
 .src/NewsEntryTest.js
-.src/Slider.js
 
 # Logs
 logs

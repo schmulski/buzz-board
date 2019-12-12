@@ -15,10 +15,15 @@ function LunchColumn() {
       <AutoPlaySwipeableViews
         index={swipeIndex}
         onChangeIndex={handleChangeIndex}
+        animateTransitions={false}
       >
         <ImageLunch
           src={require(`./images/lunchmenu.jpg`)}
           alt="This week for lunch"
+        ></ImageLunch>
+        <ImageLunch
+          src={require('./images/Month_Dezember.jpg')}
+          alt="December Lunch"
         ></ImageLunch>
         <TwitterTimelineEmbed
           sourceType="profile"
