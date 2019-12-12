@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import Header from './Header'
 import PeopleColumn from './PeopleColumn1'
 import EventsColumn from './EventsColumn2'
@@ -28,7 +28,7 @@ export default function App() {
             <Media queries={{ small: { maxWidth: 599 } }}>
               {matches =>
                 matches.small ? (
-                  <Fragment>
+                  <>
                     <Route
                       name="events"
                       path="/events"
@@ -38,14 +38,14 @@ export default function App() {
                     <Route path="/recommendations" component={LunchColumn} />
                     <Route path="/news" component={NewsTicker} />
                     <Redirect exact from="/" to="events" />
-                  </Fragment>
+                  </>
                 ) : (
-                  <Fragment>
+                  <>
                     <PeopleColumn />
                     <EventsColumn />
                     <LunchColumn />
                     <NewsTicker />
-                  </Fragment>
+                  </>
                 )
               }
             </Media>

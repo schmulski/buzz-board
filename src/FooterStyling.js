@@ -1,10 +1,7 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 const FooterStyling = styled.section`
-  display: grid;
-  grid-template-areas: 'news';
-
-  grid-template-columns: 45%;
+  display: inline-block;
   align-text: center;
   background: #ffffff;
   min-height: 60px;

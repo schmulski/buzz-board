@@ -7,7 +7,7 @@ const Header = styled.section`
   grid-template-columns: 45% 45%;
   align-text: center;
   background: #2c7873;
-  min-height: 60px;
+  min-height: 30px;
   margin: 10px;
   font-family: 'Fredericka the Great';
   font-size: 30px;
@@ -39,7 +39,7 @@ const Header = styled.section`
   .title {
     grid-area: title;
     align-text: center;
-    font-size: 50px;
+    font-size: 30px;
     color: #e13a9d;
     padding-left: 30px;
   }

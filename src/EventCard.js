@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import YellowCard from './YellowCard'
 import Media from 'react-media'
@@ -18,10 +18,10 @@ export default function EventCard({ event }) {
       <Media queries={{ small: { maxWidth: 599 } }}>
         {matches =>
           matches.small ? (
-            <Fragment>
+            <>
               <Description active={!isHidden}>{event.description}</Description>
               <Button onClick={onButtonClick}>{buttonText}</Button>
-            </Fragment>
+            </>
           ) : (
             <Description active={true}>{event.description}</Description>
           )

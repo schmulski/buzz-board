@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import StyledColumn from './StyledColumn'
 
@@ -13,7 +13,7 @@ import FirebaseConfig from './FirebaseConfig'
 import EventCard from './EventCard'
 
 import Sort from './Sort'
-import SortSchuffel from './SortSchuffel'
+import SortShuffel from './SortShuffel'
 
 import { eventWithNextOccurence } from './EventHelpers'
 import Media from 'react-media'
@@ -31,7 +31,7 @@ export default function EventsColumn() {
               <Media queries={{ small: { maxWidth: 599 } }}>
                 {matches =>
                   matches.small ? (
-                    <Fragment>
+                    <>
                       <Sort>
                         {(data.value || []).map(event => (
                           <EventCard
@@ -39,15 +39,15 @@ export default function EventsColumn() {
                           ></EventCard>
                         ))}
                       </Sort>
-                    </Fragment>
+                    </>
                   ) : (
-                    <SortSchuffel>
+                    <SortShuffel>
                       {(data.value || []).map(event => (
                         <EventCard
                           event={eventWithNextOccurence(event)}
                         ></EventCard>
                       ))}
-                    </SortSchuffel>
+                    </SortShuffel>
                   )
                 }
               </Media>
