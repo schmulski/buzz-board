@@ -35,6 +35,7 @@ export default function Nav() {
 
 const Navigation = styled.nav`
   display: grid;
+  display-grid-area: 'navigation';
   position: fixed;
   bottom: 0;
   left: 0;

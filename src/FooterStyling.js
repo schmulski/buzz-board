@@ -1,18 +1,20 @@
 import styled from 'styled-components/macro'
 
 const FooterStyling = styled.section`
-  display: inline-block;
-  align-text: center;
+  grid-area: news;
   background: #ffffff;
   min-height: 60px;
   margin: 10px;
   font-family: 'Fredericka the Great';
   font-size: 30px;
-  color: #ffffff;
+
+  white-space: nowrap;
+  width: 100vw;
+  overflow-x: hidden;
 
   @media (max-width: 600px) {
-    grid-template-areas: 'news';
-    grid-template-columns: 100%;
+    grid-template-area: 'news';
+    grid-template-column: 100%;
 
     .news {
       text-align: center;
@@ -21,9 +23,6 @@ const FooterStyling = styled.section`
   }
 
   .news {
-    grid-area: news;
-    align-text: center;
-    font-size: 50px;
     color: #e13a9d;
     padding-left: 30px;
   }

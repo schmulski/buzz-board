@@ -5,20 +5,17 @@ import slack from './images/slack.png'
 
 export default function NewsEntry({ user, message, timestamp }) {
   return (
-    <ul>
-      <ListStyle>
-        <User> {user} </User>
-        <Message>{message}</Message>
-        <Timestamp> {moment(timestamp).format('LLLL')}</Timestamp>
-        <p></p>
-      </ListStyle>
-    </ul>
+    <NewsEntryStyle>
+      <User> {user} </User>
+      <Message>{message}</Message>
+      <Timestamp> {moment(timestamp).format('LLLL')}</Timestamp>
+      <p></p>
+    </NewsEntryStyle>
   )
 }
 
-const ListStyle = styled.li`
-  list-style-image: url(${slack});
-  margin: 20px;
+const NewsEntryStyle = styled.div`
+  display: inline-block;
 `
 
 const User = styled.p`

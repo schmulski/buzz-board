@@ -11,11 +11,12 @@ import NewsTicker from './NewsTicker'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import Media from 'react-media'
 import Navigation from './Navigation'
+import GridContainer from './GridContainer'
 
 export default function App() {
   return (
     <BrowserRouter>
-      <div>
+      <GridContainer>
         <GlobalStyles />
         <Header>
           <h1 className="title"> BUZZ BOARD</h1>
@@ -52,7 +53,7 @@ export default function App() {
           </Switch>
         </ColumnWrapper>
         <Media query="(max-width: 599px)" render={() => <Navigation />} />
-      </div>
+      </GridContainer>
     </BrowserRouter>
   )
 }

@@ -2,15 +2,18 @@ import styled from 'styled-components/macro'
 
 const ColumnWrapper = styled.section`
   display: grid;
-  justify-content: space-around;
-  grid-template-areas: 'people events lunch';
   grid-template-columns: 30% 40% 30%;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'people events lunch'
+    'news news news';
 
   @media (max-width: 600px) {
     grid-template-areas:
       'events'
       'people'
-      'lunch';
+      'lunch'
+      'news';
     grid-template-columns: 100%;
   }
 `
