@@ -10,7 +10,17 @@ const FooterStyling = styled.section`
 
   white-space: nowrap;
   width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
+
+  animation: slidein 40s infinite;
+  animation-timing-function: linear;
+  @keyframes slidein {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
 
   @media (max-width: 600px) {
     grid-template-area: 'news';

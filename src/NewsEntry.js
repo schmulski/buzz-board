@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import * as moment from 'moment'
 import slack from './images/slack.png'
 
@@ -16,6 +16,15 @@ export default function NewsEntry({ user, message, timestamp }) {
 
 const NewsEntryStyle = styled.div`
   display: inline-block;
+  animation: slidein 40s infinite;
+  animation-timing-function: linear;
+  @keyframes slidein {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
 `
 
 const User = styled.p`

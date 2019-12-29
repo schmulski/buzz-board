@@ -8,6 +8,8 @@ const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
   overflow-x: hidden
+  height: 100vh;
+  width: 100 wh;
 }
 
 .App {

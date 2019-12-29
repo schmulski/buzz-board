@@ -69,4 +69,8 @@ const ClockStyle = styled.div`
   @media (max-width: 600px) {
     justify-self: center;
   }
+
+  h1 {
+    font-size: 10vw;
+  }
 `
