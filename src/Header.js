@@ -2,27 +2,27 @@ import styled from 'styled-components/macro'
 
 const Header = styled.section`
   display: grid;
-  grid-template-areas: 'title clock';
+  grid-template-areas: 'logo title clock';
 
-  grid-template-columns: 45% 45%;
+  grid-template-columns: 25% 40% 25%;
   align-text: center;
-  background: #2c7873;
-  min-height: 30px;
+  background: darkgrey;
+  min-height: 60px;
   margin: 10px;
   font-family: 'Fredericka the Great';
   font-size: 30px;
   color: #ffffff;
-  animation-duration: 3s;
-  animation-name: slidein;
-  animation-timing-function: ease-in-out;
-  @keyframes slidein {
-    from {
-      margin-left: 75%;
-    }
-    to {
-      margin-left: 0%;
-    }
-  }
+  // animation-duration: 3s;
+  // animation-name: slidein;
+  // animation-timing-function: ease-in-out;
+  // @keyframes slidein {
+  //   from {
+  //     margin-left: 75%;
+  //   }
+  //   to {
+  //     margin-left: 0%;
+  //   }
+  // }
 
   @media (max-width: 600px) {
     grid-template-areas:
@@ -40,7 +40,7 @@ const Header = styled.section`
     grid-area: title;
     align-text: center;
     font-size: 30px;
-    color: #e13a9d;
+    color: white;
     padding-left: 30px;
   }
 `

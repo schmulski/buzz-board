@@ -6,7 +6,8 @@ const GridContainer = styled.div`
   display: grid;
   grid-template-areas:
     'title clock'
-    'people events lunch'
+    'events'
+    'people lunch lunch'
     'news news news';
 
   @media (max-width: 600px) {
