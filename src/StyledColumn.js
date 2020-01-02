@@ -3,10 +3,10 @@ import styled from 'styled-components/macro'
 const StyledColumn = styled.div`
   grid-area: ${props => props.gridArea};
   display: inline-block;
-  background: #2c7873;
+  background: lightgrey;
   font-family: 'Fredericka the Great';
   color: white;
-  margin: 10px;
+  margin: 5px;
   padding: 10px;
 
   .title {

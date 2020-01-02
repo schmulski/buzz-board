@@ -12,7 +12,6 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import Media from 'react-media'
 import Navigation from './Navigation'
 import GridContainer from './GridContainer'
-import JobliftLogo from '.images/JobliftLogo.png'
 
 export default function App() {
   return (
@@ -20,7 +19,6 @@ export default function App() {
       <GridContainer>
         <GlobalStyles />
         <Header>
-          <img src={JobliftLogo} alt="Joblift" />
           <h1 className="title"> BUZZ BOARD</h1>
           <ClockStyle>
             <Clock format={'HH:mm:ss'} ticking={true} timezone={'European'} />
@@ -74,5 +72,6 @@ const ClockStyle = styled.div`
 
   h1 {
     font-size: 10vw;
+    justify-content: center;
   }
 `

@@ -5,10 +5,13 @@ import * as moment from 'moment'
 export default function NewsEntry({ user, message, timestamp }) {
   return (
     <NewsEntryStyle>
-      <User> {user} </User>
-      <Message>{message}</Message>
-      <Timestamp> {moment(timestamp).format('LLLL')}</Timestamp>
-      <p></p>
+      <div>
+        {user} {message} {moment(timestamp).format('llll')}
+      </div>
+      {/* <User> {user} </User>
+      <Message>{message}</Message> 
+      <Timestamp> {moment(timestamp).format('llll')}</Timestamp>
+      <p></p> */}
     </NewsEntryStyle>
   )
 }
