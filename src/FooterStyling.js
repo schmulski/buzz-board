@@ -1,7 +1,6 @@
 import styled from 'styled-components/macro'
 
 const FooterStyling = styled.section`
-  grid-area: news;
   background: #ffffff;
   min-height: 60px;
   margin: 10px;
@@ -9,7 +8,12 @@ const FooterStyling = styled.section`
   font-size: 30px;
 
   white-space: nowrap;
-  width: 100vw;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 50px;
+
   overflow: hidden;
 
   animation: slidein 40s infinite;
