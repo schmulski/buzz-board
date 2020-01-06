@@ -11,11 +11,12 @@ import NewsTicker from './NewsTicker'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import Media from 'react-media'
 import Navigation from './Navigation'
+import GridContainer from './GridContainer'
 
 export default function App() {
   return (
     <BrowserRouter>
-      <div>
+      <GridContainer>
         <GlobalStyles />
         <Header>
           <h1 className="title"> BUZZ BOARD</h1>
@@ -52,20 +53,25 @@ export default function App() {
           </Switch>
         </ColumnWrapper>
         <Media query="(max-width: 599px)" render={() => <Navigation />} />
-      </div>
+      </GridContainer>
     </BrowserRouter>
   )
 }
 
 const ClockStyle = styled.div`
   grid-area: clock;
-  color: #e13a9d;
-  font-size: 50px;
+  color: white;
+  font-size: 30px;
   display: grid;
   justify-self: end;
   align-self: center;
 
   @media (max-width: 600px) {
     justify-self: center;
+  }
+
+  h1 {
+    font-size: 10vw;
+    justify-content: center;
   }
 `

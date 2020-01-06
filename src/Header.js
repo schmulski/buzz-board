@@ -4,31 +4,29 @@ const Header = styled.section`
   display: grid;
   grid-template-areas: 'title clock';
 
-  grid-template-columns: 45% 45%;
+  grid-template-columns: 25% 40% 25%;
   align-text: center;
-  background: #2c7873;
-  min-height: 30px;
+  background-color #861657;
+  background-image linear-gradient(326deg, #861657 0%, #ffa69e 74%);
+  min-height: 60px;
   margin: 10px;
   font-family: 'Fredericka the Great';
   font-size: 30px;
   color: #ffffff;
-  animation-duration: 3s;
-  animation-name: slidein;
-  animation-timing-function: ease-in-out;
-  @keyframes slidein {
-    from {
-      margin-left: 75%;
-    }
-    to {
-      margin-left: 0%;
-    }
-  }
 
   @media (max-width: 600px) {
     grid-template-areas:
       'title'
       'clock';
     grid-template-columns: 100%;
+
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 130px;
+      margin: 0;
+      z-index: 100;
 
     .title {
       text-align: center;
@@ -40,7 +38,7 @@ const Header = styled.section`
     grid-area: title;
     align-text: center;
     font-size: 30px;
-    color: #e13a9d;
+    color: white;
     padding-left: 30px;
   }
 `

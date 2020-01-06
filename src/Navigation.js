@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
-import BirthdayIcon from './images/confetti.png'
-import CalendarIcon from './images/calendar.png'
-import GoodIcon from './images/good.png'
-import NewsIcon from './images/news.png'
+import BirthdayIcon from './images/benutzer.png'
+import CalendarIcon from './images/lautsprecher.png'
+import GoodIcon from './images/information.png'
+import NewsIcon from './images/zeitung.png'
 
 export default function Nav() {
   return (
@@ -35,10 +35,12 @@ export default function Nav() {
 
 const Navigation = styled.nav`
   display: grid;
+  display-grid-area: 'navigation';
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 100;
   height: 80px;
   grid-auto-flow: column;
   background-color: white;
