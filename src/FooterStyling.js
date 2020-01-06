@@ -25,8 +25,13 @@ const FooterStyling = styled.section`
     to {
       transform: translateX(-100%);
     }
+  }
 
   @media (max-width: 600px) {
+    animation: none;
+    position: relative;
+    height: auto;
+
     grid-template-area: 'news';
     grid-template-column: 100%;
 

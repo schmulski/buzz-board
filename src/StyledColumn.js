@@ -14,6 +14,10 @@ const StyledColumn = styled.div`
     color: #fa697c;
     text-align: center;
   }
+
+  @media (max-width: 600px) {
+    margin: 0;
+  }
 `
 
 export default StyledColumn

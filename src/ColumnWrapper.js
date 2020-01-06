@@ -9,6 +9,10 @@ const ColumnWrapper = styled.section`
     'news news news';
 
   @media (max-width: 600px) {
+    margin-top: 130px;
+    padding-bottom: 80px;
+    z-index: 10;
+
     grid-template-areas:
       'events'
       'people'

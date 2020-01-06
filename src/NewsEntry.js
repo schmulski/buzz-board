@@ -18,6 +18,12 @@ export default function NewsEntry({ user, message, timestamp }) {
 
 const NewsEntryStyle = styled.div`
   display: inline-block;
+
+  @media (max-width: 600px) {
+    display: block;
+    white-space: normal;
+    margin-bottom: 20px;
+  }
 `
 
 const User = styled.p`
