@@ -10,25 +10,28 @@ import {
 
 import FirebaseConfig from './FirebaseConfig'
 import FooterStyling from './FooterStyling'
+import FooterStylingScroller from './FooterStylingScroller'
 
 export default function NewsTicker() {
   return (
     <FooterStyling>
-      <FirebaseDatabaseProvider firebase={firebase} {...FirebaseConfig}>
-        <FirebaseDatabaseNode path="news/" orderByChild="timestamp">
-          {data => {
-            return Object.keys(data.value || {})
-              .map(id => (
-                <NewsEntry
-                  user={data.value[id].user}
-                  message={data.value[id].message}
-                  timestamp={data.value[id].timestamp}
-                />
-              ))
-              .reverse()
-          }}
-        </FirebaseDatabaseNode>
-      </FirebaseDatabaseProvider>
+      <FooterStylingScroller>
+        <FirebaseDatabaseProvider firebase={firebase} {...FirebaseConfig}>
+          <FirebaseDatabaseNode path="news/" orderByChild="timestamp">
+            {data => {
+              return Object.keys(data.value || {})
+                .map(id => (
+                  <NewsEntry
+                    user={data.value[id].user}
+                    message={data.value[id].message}
+                    timestamp={data.value[id].timestamp}
+                  />
+                ))
+                .reverse()
+            }}
+          </FirebaseDatabaseNode>
+        </FirebaseDatabaseProvider>
+      </FooterStylingScroller>
     </FooterStyling>
   )
 }

@@ -45,10 +45,14 @@ const Description = styled.pre`
   font-family: 'Fredericka the Great';
 `
 const Button = styled.button`
-  background: #e13a9d;
+  background: #191919;
+  color: white;
   font-family: 'Fredericka the Great';
+  font-size: 15px;
   border-radius: 15px;
-  justify-self: center;
+  position: relative;
+  top: 50%;
+  left: 35%;
   height: 40px;
   width: 100px;
   border: transparent;

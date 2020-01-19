@@ -18,11 +18,11 @@ function LunchColumn() {
         animateTransitions={false}
       >
         <ImageLunch
-          src={require(`./images/lunchmenu.jpg`)}
+          src={require(`./images/Menu KW02.jpg`)}
           alt="This week for lunch"
         ></ImageLunch>
         <ImageLunch
-          src={require('./images/Month_Dezember.jpg')}
+          src={require('./images/Lunchmenu January2020.jpg')}
           alt="December Lunch"
         ></ImageLunch>
         <TwitterTimelineEmbed

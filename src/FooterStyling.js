@@ -3,7 +3,8 @@ import styled from 'styled-components/macro'
 const FooterStyling = styled.section`
   background: #ffffff;
   min-height: 60px;
-  margin: 10px;
+  margin: 10px 0 0 0;
+  padding: 0 10px;
   font-family: 'Fredericka the Great';
   font-size: 30px;
 
@@ -16,21 +17,17 @@ const FooterStyling = styled.section`
 
   overflow: hidden;
 
-  animation: slidein 40s infinite;
-  animation-timing-function: linear;
-  @keyframes slidein {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
+  @media (min-width: 600px) {
+    display: flex;
+    align-items: center;
   }
 
   @media (max-width: 600px) {
     animation: none;
     position: relative;
     height: auto;
+    margin: 10px;
+    padding: 0;
 
     grid-template-area: 'news';
     grid-template-column: 100%;

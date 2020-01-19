@@ -36,6 +36,8 @@ export default function Nav() {
 const Navigation = styled.nav`
   display: grid;
   display-grid-area: 'navigation';
+  background-color #861657;
+  background-image linear-gradient(326deg, #861657 0%, #ffa69e 74%);
   position: fixed;
   bottom: 0;
   left: 0;
